@@ -22,6 +22,6 @@ public class Platform extends Actor
      */
     public void act()
     {
-       getWorld().showText(number + "", getX()+(image.getWidth()/2),getY()+(image.getHeight()/2));
+       getWorld().showText(number + "", getX(),getY());
     }
 }
