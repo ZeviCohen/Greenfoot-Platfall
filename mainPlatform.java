@@ -15,6 +15,6 @@ public class mainPlatform extends Actor
     public void act()
     {
         Player player = ((Platfall)getWorld()).player1;
-        setLocation(getX(),player.getHeight()-(player.getImage().getHeight()/2));
+        setLocation(getX(),player.getPlayerHeight()+(player.getImage().getHeight()/2));
     }
 }
