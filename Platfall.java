@@ -20,8 +20,8 @@ public class Platfall extends World
         // Create a new world
         super(800, 600, 1);
         //Creates the players
-        addObject(player1, 20, 560);
-        addObject(player2, 560, 560);
+        addObject(player1, 50, 500);
+        addObject(player2, 750, 500);
         //Creates the mainPlatforms
     }
     

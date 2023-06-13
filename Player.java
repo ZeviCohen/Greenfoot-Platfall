@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     //Variables
-    private int height;
+    private int platformHeight;
     private int speed;
     //Animation variables
     private boolean walkAnimation;
@@ -23,7 +23,12 @@ public class Player extends Actor
     private int cooldownVar;
     private int jumpCount;
     public Player(){
-        height = 0;
+        //Resize the image
+        GreenfootImage img = getImage();
+        img.scale(50, 75);
+        setImage(img);
+        //Other variables
+        platformHeight = 0;
         speed = 5;
         walkAnimation = false;
         //walk1 is default image
@@ -52,8 +57,8 @@ public class Player extends Actor
     }
     public void checkHeight()
     {
-        if (getY()>height){
-            height = getY();
+        if (getY()>platformHeight){
+            platformHeight = getY();
         }
     }
     public void checkKeyPresses()
@@ -112,6 +117,6 @@ public class Player extends Actor
         }
     }
     public int getPlayerHeight(){
-        return height;
+        return platformHeight;
     }
 }
