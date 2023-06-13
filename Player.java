@@ -26,9 +26,9 @@ public class Player extends Actor
         speed = 5;
         walkAnimation = false;
         //walk1 is default image
-        walk1 = new GreenfootImage("");
-        walk2 = new GreenfootImage("");
-        jumpImage = new GreenfootImage("");
+        walk1 = new GreenfootImage("ForUseImages/playerGrey_walk1.png");
+        walk2 = new GreenfootImage("ForUseImages/playerGrey_walk2.png");
+        jumpImage = new GreenfootImage("ForUseImages/playerGrey_up2.png");
         //TODO- put file in for walk1, walk2 and jumpImage(they are images for animation)
         //Variables for jump
         isJump = false;
@@ -58,11 +58,11 @@ public class Player extends Actor
     public void checkKeyPresses()
     {
         if (Greenfoot.isKeyDown("left")){
-            setLocation(getX()+speed, getY());
+            setLocation(getX() - speed, getY());
             walkAnimation = true;
         }
         else if (Greenfoot.isKeyDown("right")){
-            setLocation(getX()-speed, getY());
+            setLocation(getX() + speed, getY());
             walkAnimation = true;
         }
         else{
@@ -103,7 +103,8 @@ public class Player extends Actor
     public void walkAnimation()
     {
         if (walkAnimation){
-            
+            setImage(walk2);
+            setImage(walk1);
         }
         else{
             setImage(walk1);
