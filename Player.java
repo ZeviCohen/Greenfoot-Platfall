@@ -15,6 +15,7 @@ public class Player extends Actor
     private boolean walkAnimation;
     private GreenfootImage walk1;
     private GreenfootImage walk2;
+    private int walkState;
     private GreenfootImage jumpImage;
     //Jump Variables
     private boolean isJump;
@@ -23,17 +24,17 @@ public class Player extends Actor
     private int cooldownVar;
     private int jumpCount;
     public Player(){
-        //Resize the image
-        GreenfootImage img = getImage();
-        img.scale(50, 75);
-        setImage(img);
         //Other variables
         platformHeight = 0;
         speed = 5;
-        walkAnimation = false;
-        //walk1 is default image
+        //Animation variables
         walk1 = new GreenfootImage("ForUseImages/playerGrey_walk1.png");
         walk2 = new GreenfootImage("ForUseImages/playerGrey_walk2.png");
+        walk1.scale(54,67);
+        walk2.scale(54,64);
+        setImage(walk1);
+        walkState = 1;
+        walkAnimation = false;
         jumpImage = new GreenfootImage("ForUseImages/playerGrey_up2.png");
         //TODO- put file in for walk1, walk2 and jumpImage(they are images for animation)
         //Variables for jump
@@ -45,14 +46,23 @@ public class Player extends Actor
     }
     public void act()
     {
+        updateCooldown();
         //For updating mainPlatform height
         checkHeight();
         //To move the player
         checkKeyPresses();
         //This is basic jump but will not work for multiple platforms. Will work on later
-        //checkJump();
+        checkJump();
         if (!isJump){
-            //walkAnimation();
+            walkAnimation();
+        }
+    }
+    public void updateCooldown(){
+        //Update cooldownVar. This makes it so the player location is updated every other few frames slowing down the animation
+        if (cooldownVar<3){
+            cooldownVar++;
+        } else if (cooldownVar==3){
+            cooldownVar=0;
         }
     }
     public void checkHeight()
@@ -73,16 +83,15 @@ public class Player extends Actor
         }
         else{
             walkAnimation = false;
+            setImage(walk1);
+        }
+        //Jump check
+        if (Greenfoot.isKeyDown("up")){
+            isJump = true;
         }
     }
     public void checkJump()
     {
-        //Update cooldownVar. This makes it so the player location is updated every other few frames slowing down the animation
-        if (cooldownVar<3){
-            cooldownVar++;
-        } else if (cooldownVar==0){
-            cooldownVar=0;
-        }
         if (isJump){
                 setImage(jumpImage);
                 if (cooldownVar==0){
@@ -109,11 +118,13 @@ public class Player extends Actor
     public void walkAnimation()
     {
         if (walkAnimation){
-            setImage(walk2);
-            setImage(walk1);
-        }
-        else{
-            setImage(walk1);
+            if (walkState==1 && cooldownVar==0){
+                setImage(walk2);
+                walkState=2;
+            } else if (walkState==2 && cooldownVar==0){
+                setImage(walk1);
+                walkState=1;
+            }
         }
     }
     public int getPlayerHeight(){
