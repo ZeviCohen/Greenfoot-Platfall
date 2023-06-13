@@ -26,9 +26,9 @@ public class Player extends Actor
         speed = 5;
         walkAnimation = false;
         //walk1 is default image
-        walk1 = new GreenfootImage("");
-        walk2 = new GreenfootImage("");
-        jumpImage = new GreenfootImage("");
+        //walk1 = new GreenfootImage("");
+        //walk2 = new GreenfootImage("");
+        //jumpImage = new GreenfootImage("");
         //TODO- put file in for walk1, walk2 and jumpImage(they are images for animation)
         //Variables for jump
         isJump = false;
@@ -51,8 +51,8 @@ public class Player extends Actor
     }
     public void checkHeight()
     {
-        if (getX()>height){
-            height = getX();
+        if (getY()>height){
+            height = getY();
         }
     }
     public void checkKeyPresses()
