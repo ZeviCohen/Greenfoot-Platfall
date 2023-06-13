@@ -1,5 +1,6 @@
 #Greenfoot project file
 class.Platform.image=house-02.png
+class.Player.image=boy2.png
 class.mainPlatform.image=brick.jpg
 dependency1.from=Platfall
 dependency1.to=Player
@@ -62,5 +63,5 @@ target4.y=0
 version=3.0.0
 width=1004
 world.lastInstantiated=Platfall
-xPosition=84
-yPosition=64
+xPosition=70
+yPosition=44

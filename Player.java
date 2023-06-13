@@ -23,6 +23,7 @@ public class Player extends Actor
     private int cooldownVar;
     private int jumpCount;
     public Player(){
+        height = 0;
         speed = 5;
         walkAnimation = false;
         //walk1 is default image
@@ -44,15 +45,15 @@ public class Player extends Actor
         //To move the player
         checkKeyPresses();
         //This is basic jump but will not work for multiple platforms. Will work on later
-        checkJump();
+        //checkJump();
         if (!isJump){
-            walkAnimation();
+            //walkAnimation();
         }
     }
     public void checkHeight()
     {
-        if (getX()>height){
-            height = getX();
+        if (getY()>height){
+            height = getY();
         }
     }
     public void checkKeyPresses()
@@ -110,7 +111,7 @@ public class Player extends Actor
             setImage(walk1);
         }
     }
-    public int getHeight(){
+    public int getPlayerHeight(){
         return height;
     }
 }
