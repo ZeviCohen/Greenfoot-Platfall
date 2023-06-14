@@ -19,7 +19,7 @@ public class Platform extends Actor
     
     //Gravity
     private int gravityVar;
-    
+    private int[] currentLocation = new int[2];
     public Platform()
     {
         gravityVar = 5;
@@ -31,7 +31,10 @@ public class Platform extends Actor
     public void act()
     {
         updatePosition();
+        getWorld().showText("", currentLocation[0], currentLocation[1]);
         getWorld().showText(number + "", getX(),getY());
+        currentLocation[0] = getX();
+        currentLocation[1] = getY();
     }
     public void updatePosition()
     {
