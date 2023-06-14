@@ -50,6 +50,8 @@ public class Player extends Actor
         updateCooldown();
         //For updating mainPlatform height
         checkHeight();
+        //Check if player is touching a platform
+        checkPlatform();
         //To move the player
         checkKeyPresses();
         //This is basic jump but will not work for multiple platforms. Will work on later
@@ -71,6 +73,13 @@ public class Player extends Actor
         if (getY()>platformHeight){
             platformHeight = getY();
         }
+    }
+    public void checkPlatform()
+    {
+       if (isTouching(Platform.class) || isTouching(mainPlatform.class))
+       {
+           touchingPlatform = true;
+       }
     }
     public void checkKeyPresses()
     {
@@ -103,11 +112,11 @@ public class Player extends Actor
                     if(jumpCount==0){
                         direction = "down";
                     }
-                    if(jumpCount<=7 & direction == "down"){
+                    if(!touchingPlatform & direction == "down"){
                         setLocation(getX(), getY()+(int)(Math.pow(jumpCount,2)));
                         jumpCount++;
                     }
-                    if (jumpCount == 8){
+                    if (touchingPlatform){
                         direction = "up";
                         jumpCount = 7;
                         setImage(walk1);
