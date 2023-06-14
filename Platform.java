@@ -19,10 +19,20 @@ public class Platform extends Actor
     
     //Gravity
     private int gravityVar;
+    
+    //To update text location
     private int[] currentLocation = new int[2];
+    
+    //Frozen or not
+    private boolean frozen;
+    
+    //For cooldown on freezing
+    private int cooldownVar;
     public Platform()
     {
         gravityVar = 5;
+        frozen = false;
+        cooldownVar = 0;
     }
     /**
      * Act - do whatever the Platform wants to do. This method is called whenever
@@ -30,16 +40,46 @@ public class Platform extends Actor
      */
     public void act()
     {
+        updateCooldown();
+        checkFrozen();
         updatePosition();
+        updateText();
+        checkBottom();
+    }
+    public void updateCooldown()
+    {
+        if (cooldownVar<7){
+            cooldownVar++;
+        } else if (cooldownVar==7){
+            cooldownVar = 0;
+        }
+    }
+    public void checkFrozen()
+    {
+        if (!frozen){
+            if (Greenfoot.isKeyDown(number + "") && cooldownVar==0){
+                gravityVar = 0;
+                frozen = true;
+            }
+        } else{
+            if (Greenfoot.isKeyDown(number + "")&& cooldownVar==0){
+                gravityVar = 5;
+                frozen = false;
+            }
+        }
+    }
+    public void updatePosition()
+    {
+        if (!frozen){
+            setLocation(getX(),getY()+gravityVar);
+        }
+    }
+    public void updateText()
+    {
         getWorld().showText("", currentLocation[0], currentLocation[1]);
         getWorld().showText(number + "", getX(),getY());
         currentLocation[0] = getX();
         currentLocation[1] = getY();
-        checkBottom();
-    }
-    public void updatePosition()
-    {
-        setLocation(getX(),getY()+gravityVar);
     }
     private void checkBottom(){
         if(getY() > 597){
