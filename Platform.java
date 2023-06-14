@@ -35,9 +35,16 @@ public class Platform extends Actor
         getWorld().showText(number + "", getX(),getY());
         currentLocation[0] = getX();
         currentLocation[1] = getY();
+        checkBottom();
     }
     public void updatePosition()
     {
         setLocation(getX(),getY()+gravityVar);
+    }
+    private void checkBottom(){
+        if(getY() > 597){
+            getWorld().showText("", currentLocation[0], currentLocation[1]);
+            getWorld().removeObject(this);
+        }
     }
 }
