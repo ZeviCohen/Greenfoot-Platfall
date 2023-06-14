@@ -108,6 +108,7 @@ public class Player extends Actor
                     if(jumpCount>0 & direction =="up"){
                             setLocation(getX(), getY()-(int)(Math.pow(jumpCount,2)));
                             jumpCount--;
+                            touchingPlatform = false;
                     }
                     if(jumpCount==0){
                         direction = "down";
