@@ -36,6 +36,7 @@ public class Player extends Actor
         walkState = 1;
         walkAnimation = false;
         jumpImage = new GreenfootImage("ForUseImages/playerGrey_up2.png");
+        jumpImage.scale(54,58);
         //TODO- put file in for walk1, walk2 and jumpImage(they are images for animation)
         //Variables for jump
         isJump = false;
