@@ -74,7 +74,7 @@ public class Player extends Actor
     }
     public void checkHeight()
     {
-        if (getY()>platformHeight){
+        if (getY()<platformHeight){
             platformHeight = getY();
         }
     }

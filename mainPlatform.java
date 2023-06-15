@@ -18,6 +18,10 @@ public class mainPlatform extends Actor
     {
         this.player = player;
         playerDeathVar = 0;
+        //Scale image
+        GreenfootImage image = getImage();
+        image.scale(image.getWidth()/2,image.getHeight()/2);
+        setImage(image);
     }
     public void act()
     {

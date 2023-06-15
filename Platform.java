@@ -12,7 +12,7 @@ public class Platform extends Actor
 {
     //To assign a number to each platform
     ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(0,1,2,3,4,5,6,7,8,9));
-    private Integer number = numbers.get(Greenfoot.getRandomNumber(numbers.size()));
+    private Integer number;
     
     //Define image
     private GreenfootImage image = getImage();
@@ -30,6 +30,7 @@ public class Platform extends Actor
     private int cooldownVar;
     public Platform()
     {
+        number = numbers.get(Greenfoot.getRandomNumber(numbers.size()));
         gravityVar = 5;
         frozen = false;
         cooldownVar = 0;
