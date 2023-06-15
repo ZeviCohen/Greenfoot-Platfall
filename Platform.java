@@ -49,7 +49,7 @@ public class Platform extends Actor
     }
     public void updateCooldown()
     {
-        if (cooldownVar<10){
+        if (cooldownVar<10 && cooldownVar != 0){
             cooldownVar++;
         } else if (cooldownVar==10){
             cooldownVar = 0;
@@ -61,11 +61,13 @@ public class Platform extends Actor
             if (Greenfoot.isKeyDown(number + "") && cooldownVar==0){
                 gravityVar = 0;
                 frozen = true;
+                cooldownVar++;
             }
         } else{
             if (Greenfoot.isKeyDown(number + "")&& cooldownVar==0){
                 gravityVar = 5;
                 frozen = false;
+                cooldownVar++;
             }
         }
     }
