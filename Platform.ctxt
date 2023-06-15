@@ -16,4 +16,6 @@ comment6.params=
 comment6.target=void\ updateText()
 comment7.params=
 comment7.target=void\ checkBottom()
-numComments=8
+comment8.params=
+comment8.target=int\ getGravity()
+numComments=9

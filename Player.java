@@ -52,6 +52,8 @@ public class Player extends Actor
         checkHeight();
         //Check if player is touching a platform
         checkPlatform();
+        //Makes the player fall if not touching a platform. If touching a platform the player will fall if that platform is falling.
+        checkGravity();
         //To move the player
         checkKeyPresses();
         //This is basic jump but will not work for multiple platforms. Will work on later
@@ -59,6 +61,8 @@ public class Player extends Actor
         if (!isJump){
             walkAnimation();
         }
+        //Checks if the player dies
+        checkDeath();
     }
     public void updateCooldown(){
         //Update cooldownVar. This makes it so the player location is updated every other few frames slowing down the animation
@@ -80,6 +84,10 @@ public class Player extends Actor
        {
            touchingPlatform = true;
        }
+    }
+    public void checkGravity()
+    {
+        ;
     }
     public void checkKeyPresses()
     {
@@ -137,6 +145,20 @@ public class Player extends Actor
                 walkState=1;
             }
         }
+    }
+    public void checkDeath()
+    {
+        if (getY()>600-(getImage().getHeight()/2))
+        {
+            respawn();
+        }
+    }
+    public void respawn()
+    {
+        //TODO
+        ((Platfall)getWorld()).mainPlatform1.setPlayerDeathVar(1);
+        //Respawns to the highest point the player has been (stored in platformHeight)
+        setLocation(50, platformHeight);
     }
     public int getPlayerHeight(){
         return platformHeight;

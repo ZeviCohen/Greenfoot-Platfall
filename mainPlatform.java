@@ -12,9 +12,22 @@ public class mainPlatform extends Actor
      * Act - do whatever the Main_Platform wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private Player player;
+    private int playerDeathVar;
+    public mainPlatform(Player player)
+    {
+        this.player = player;
+        playerDeathVar = 0;
+    }
     public void act()
     {
-        Player player = ((Platfall)getWorld()).player1;
-        setLocation(getX(),player.getPlayerHeight()+(player.getImage().getHeight()/2));
+        if (playerDeathVar == 1){
+            setLocation(getX(),player.getPlayerHeight()+(player.getImage().getHeight()/2));
+            playerDeathVar = 0;
+        }
+    }
+    public void setPlayerDeathVar(int var)
+    {
+        playerDeathVar = var;
     }
 }

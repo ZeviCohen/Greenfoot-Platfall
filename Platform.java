@@ -48,9 +48,9 @@ public class Platform extends Actor
     }
     public void updateCooldown()
     {
-        if (cooldownVar<7){
+        if (cooldownVar<10){
             cooldownVar++;
-        } else if (cooldownVar==7){
+        } else if (cooldownVar==10){
             cooldownVar = 0;
         }
     }
@@ -86,5 +86,9 @@ public class Platform extends Actor
             getWorld().showText("", currentLocation[0], currentLocation[1]);
             getWorld().removeObject(this);
         }
+    }
+    public int getGravity()
+    {
+        return gravityVar;
     }
 }
