@@ -31,7 +31,7 @@ public class Platform extends Actor
     public Platform()
     {
         number = numbers.get(Greenfoot.getRandomNumber(numbers.size()));
-        gravityVar = 5;
+        gravityVar = 4;
         frozen = false;
         cooldownVar = 0;
     }
@@ -49,9 +49,9 @@ public class Platform extends Actor
     }
     public void updateCooldown()
     {
-        if (cooldownVar<10 && cooldownVar != 0){
+        if (cooldownVar<5 && cooldownVar != 0){
             cooldownVar++;
-        } else if (cooldownVar==10){
+        } else if (cooldownVar==5){
             cooldownVar = 0;
         }
     }

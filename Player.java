@@ -23,6 +23,8 @@ public class Player extends Actor
     private String direction;
     private int cooldownVar;
     private int jumpCount;
+    //Gravity Variables
+    private int gravityVar;
     public Player(){
         //Other variables
         platformHeight = 0;
@@ -44,6 +46,8 @@ public class Player extends Actor
         touchingPlatform = true;
         direction = "up";
         cooldownVar = 0;
+        //Initializes gravity to 0;
+        gravityVar = 0;
     }
     public void act()
     {
@@ -87,7 +91,20 @@ public class Player extends Actor
     }
     public void checkGravity()
     {
-        ;
+        if (!isJump && !isTouching(mainPlatform.class) && !isTouching(Platform.class)){
+            isJump = true;
+            direction = "down";
+            jumpCount = 0;
+            touchingPlatform = false;
+        }
+        else if(!isJump && isTouching(Platform.class)){
+            Platform platform = (Platform)getOneObjectAtOffset(5, 5, Platform.class);
+            gravityVar = platform.getGravity();
+        }
+        else{
+            gravityVar = 0;
+        }
+        setLocation(getX(), getY()+gravityVar);
     }
     public void checkKeyPresses()
     {
