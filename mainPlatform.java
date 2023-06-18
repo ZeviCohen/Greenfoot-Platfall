@@ -14,14 +14,21 @@ public class mainPlatform extends Actor
      */
     private Player player;
     private int playerDeathVar;
-    public mainPlatform(Player player)
+    public mainPlatform(Player player, boolean invertCommand)
     {
         this.player = player;
         playerDeathVar = 0;
         //Scale image
-        GreenfootImage image = getImage();
+        /*
+         * GreenfootImage image = getImage();
         image.scale(image.getWidth()/2,image.getHeight()/2);
         setImage(image);
+        */
+        if(invertCommand){
+            GreenfootImage image = getImage();
+            image.mirrorHorizontally();
+            setImage(image);
+        }
     }
     public void act()
     {
