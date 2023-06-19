@@ -56,8 +56,8 @@ public class Platfall extends World
             showText(textForKeybinds.get(0),250 ,490);
             showText(textForKeybinds.get(1),300,490);
             showText(textForKeybinds.get(2),275,450);
-            showText(textForKeybinds.get(3),560,490);
-            showText(textForKeybinds.get(4),510,490);
+            showText(textForKeybinds.get(3),510,490);
+            showText(textForKeybinds.get(4),560,490);
             showText(textForKeybinds.get(5),535,450);
         } else{
             //Hides the text
