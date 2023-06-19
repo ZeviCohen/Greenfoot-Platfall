@@ -14,9 +14,6 @@ public class infoIcon extends Actor
      */
     public infoIcon()
     {
-        GreenfootImage img = getImage();
-        img.scale(img.getWidth()/10, img.getHeight()/10);
-        setImage(img);
     }
     public void act()
     {
