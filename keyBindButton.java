@@ -24,6 +24,12 @@ public class keyBindButton extends Actor
         if (Greenfoot.mouseClicked(this))
         {
             ((Platfall)getWorld()).keyBindMenu = true;
+            ((Platfall)getWorld()).keyBindContinue = false;
+            //Grays out background
+            getWorld().addObject(new GrayBackground("keyBind",0), 400, 130);
+            getWorld().addObject(new GrayBackground("keyBind",1), 50, 500);
+            getWorld().addObject(new GrayBackground("keyBind",1), 750, 500);
+            getWorld().addObject(new GrayBackground("keyBind",2), 400, 595);
             //Creates the textbox
             Textbox textbox = new Textbox(600, 600);
             getWorld().addObject(textbox, 401 ,475);

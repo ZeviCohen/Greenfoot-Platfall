@@ -12,7 +12,7 @@ public class Platfall extends World
     public ArrayList<String> keybinds = new ArrayList<>(Arrays.asList("left","right","up","a", "d", "w"));
     public boolean keyBindMenu;
     public KeyBinds selected;
-    private ArrayList<String> textForKeybinds = new ArrayList<>(Arrays.asList("","","","a", "d", "w"));
+    private ArrayList<String> textForKeybinds = new ArrayList<>(Arrays.asList("left","right","up","a", "d", "w"));
     public boolean keyBindContinue;
     public Platfall()
     {    
