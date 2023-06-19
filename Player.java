@@ -8,8 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    //Player number
+    //Player dependent variables
     private int playerNum;
+    private int respawnX;
     //Variables
     private int platformHeight;
     private int speed;
@@ -27,11 +28,12 @@ public class Player extends Actor
     private int jumpCount;
     //Gravity Variables
     private int gravityVar;
-    public Player(int playerNum){
-        //Player Number
+    public Player(int playerNum, int respawnX){
+        //Player dependent variables
         this.playerNum = playerNum;
+        this.respawnX = respawnX;
         //Other variables
-        platformHeight = 0;
+        platformHeight = 550;
         speed = 5;
         //Animation variables
         walk1 = new GreenfootImage("ForUseImages/playerGrey_walk1.png");
@@ -183,7 +185,7 @@ public class Player extends Actor
         //TODO
         ((Platfall)getWorld()).mainPlatform1.setPlayerDeathVar(1);
         //Respawns to the highest point the player has been (stored in platformHeight)
-        setLocation(50, platformHeight);
+        setLocation(respawnX, platformHeight);
     }
     public void checkWin(){
         if (isTouching(finishLine.class)){

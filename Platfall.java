@@ -14,8 +14,8 @@ public class Platfall extends World
      * 
      */
     //Initialize the players
-    public Player player1 = new Player(1);
-    public Player player2 = new Player(2);
+    public Player player1 = new Player(1, 50);
+    public Player player2 = new Player(2, 750);
     
     //Initialize the mainPlatforms
     public mainPlatform mainPlatform1 = new mainPlatform(player1, false);
