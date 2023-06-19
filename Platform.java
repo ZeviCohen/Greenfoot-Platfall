@@ -49,9 +49,9 @@ public class Platform extends Actor
     }
     public void updateCooldown()
     {
-        if (cooldownVar<5 && cooldownVar != 0){
+        if (cooldownVar<10 && cooldownVar != 0){
             cooldownVar++;
-        } else if (cooldownVar==5){
+        } else if (cooldownVar==10){
             cooldownVar = 0;
         }
     }

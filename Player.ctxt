@@ -1,14 +1,16 @@
 #BlueJ class context
 comment0.target=Player
 comment0.text=\n\ Write\ a\ description\ of\ class\ Player\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Player()
+comment1.params=playerNum
+comment1.target=Player(int)
 comment10.params=
 comment10.target=void\ checkDeath()
 comment11.params=
 comment11.target=void\ respawn()
 comment12.params=
-comment12.target=int\ getPlayerHeight()
+comment12.target=void\ checkWin()
+comment13.params=
+comment13.target=int\ getPlayerHeight()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
@@ -25,4 +27,4 @@ comment8.params=
 comment8.target=void\ checkJump()
 comment9.params=
 comment9.target=void\ walkAnimation()
-numComments=13
+numComments=14

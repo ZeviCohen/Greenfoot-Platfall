@@ -14,8 +14,8 @@ public class Platfall extends World
      * 
      */
     //Initialize the players
-    public Player player1 = new Player();
-    public Player player2 = new Player();
+    public Player player1 = new Player(1);
+    public Player player2 = new Player(2);
     
     //Initialize the mainPlatforms
     public mainPlatform mainPlatform1 = new mainPlatform(player1, false);
@@ -30,10 +30,13 @@ public class Platfall extends World
         //Creates the mainPlatforms
         addObject(mainPlatform1,65,560);
         addObject(mainPlatform2 ,735, 560);
+        //Creates the finish line
+        addObject(new finishLine(), 231,17);
+        addObject(new finishLine(), 585, 17);
     }
     
     public void act(){
-        if (Greenfoot.getRandomNumber(1000)<2){
+        if (Greenfoot.getRandomNumber(1000)<5){
             addObject(new Platform(), Greenfoot.getRandomNumber(720)+40, 40);
         }
     }

@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
+    //Player number
+    private int playerNum;
     //Variables
     private int platformHeight;
     private int speed;
@@ -25,7 +27,9 @@ public class Player extends Actor
     private int jumpCount;
     //Gravity Variables
     private int gravityVar;
-    public Player(){
+    public Player(int playerNum){
+        //Player Number
+        this.playerNum = playerNum;
         //Other variables
         platformHeight = 0;
         speed = 5;
@@ -67,6 +71,8 @@ public class Player extends Actor
         }
         //Checks if the player dies
         checkDeath();
+        //Checks if the player wins
+        checkWin();
     }
     public void updateCooldown(){
         //Update cooldownVar. This makes it so the player location is updated every other few frames slowing down the animation
@@ -98,8 +104,10 @@ public class Player extends Actor
             touchingPlatform = false;
         }
         else if(!isJump && isTouching(Platform.class)){
-            Platform platform = (Platform)getOneObjectAtOffset(5, 5, Platform.class);
-            gravityVar = platform.getGravity();
+            Platform platform = (Platform)getOneObjectAtOffset(0, 10, Platform.class);
+            if (platform!=null){
+                gravityVar = platform.getGravity();
+            }
         }
         else{
             gravityVar = 0;
@@ -176,6 +184,11 @@ public class Player extends Actor
         ((Platfall)getWorld()).mainPlatform1.setPlayerDeathVar(1);
         //Respawns to the highest point the player has been (stored in platformHeight)
         setLocation(50, platformHeight);
+    }
+    public void checkWin(){
+        if (isTouching(finishLine.class)){
+            Greenfoot.setWorld(new GameOver(playerNum));
+        }
     }
     public int getPlayerHeight(){
         return platformHeight;
