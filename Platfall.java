@@ -20,11 +20,13 @@ public class Platfall extends World
     //Initialize the mainPlatforms
     public mainPlatform mainPlatform1 = new mainPlatform(player1, false);
     public mainPlatform mainPlatform2 = new mainPlatform(player2, true);
+    
+    //Background gif
+    private GifImage bg = new GifImage("images/Background.gif");
     public Platfall()
     {    
         // Create a new world
         super(800, 600, 1);
-        GifImage bg = new GifImage("images/Background.gif");
         setBackground(bg.getCurrentImage());
         //Creates the players
         addObject(player1, 50, 500);
@@ -39,7 +41,8 @@ public class Platfall extends World
     
     public void act(){
         if (Greenfoot.getRandomNumber(1000)<5){
-            addObject(new Platform(), Greenfoot.getRandomNumber(720)+40, 40);
+            addObject(new Platform(), Greenfoot.getRandomNumber(542)+129, 40);
         }
+        setBackground(bg.getCurrentImage());
     }
 }

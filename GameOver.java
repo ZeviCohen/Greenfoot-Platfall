@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameOver extends World
 {
-
+    //Background gif
+    private GifImage bg = new GifImage("ForUseImages/endScreenGif.gif");
     /**
      * Constructor for objects of class GameOver.
      * 
@@ -23,5 +24,11 @@ public class GameOver extends World
         
         //Restart button
         addObject(new playAgainButton(), 400, 400);
+    }
+    
+    public void act()
+    {
+        bg.getCurrentImage().scale(800, 600);
+        setBackground(bg.getCurrentImage());
     }
 }
