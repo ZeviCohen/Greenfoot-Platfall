@@ -33,7 +33,7 @@ public class mainPlatform extends Actor
     public void act()
     {
         if (playerDeathVar == 1){
-            setLocation(getX(),player.getPlayerHeight()+(player.getImage().getHeight()/2));
+            setLocation(getX(),player.getPlayerHeight()+(player.getImage().getHeight()/2)+35);
             playerDeathVar = 0;
         }
     }

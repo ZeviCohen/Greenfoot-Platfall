@@ -24,12 +24,14 @@ public class Platfall extends World
     {    
         // Create a new world
         super(800, 600, 1);
+        GifImage bg = new GifImage("images/Background.gif");
+        setBackground(bg.getCurrentImage());
         //Creates the players
         addObject(player1, 50, 500);
         //addObject(player2, 750, 500);
         //Creates the mainPlatforms
-        addObject(mainPlatform1,65,560);
-        addObject(mainPlatform2 ,735, 560);
+        addObject(mainPlatform1,65,565);
+        addObject(mainPlatform2 ,735, 565);
         //Creates the finish line
         addObject(new finishLine(), 231,17);
         addObject(new finishLine(), 585, 17);

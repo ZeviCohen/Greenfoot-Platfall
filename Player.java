@@ -58,8 +58,6 @@ public class Player extends Actor
     public void act()
     {
         updateCooldown();
-        //For updating mainPlatform height
-        checkHeight();
         //Check if player is touching a platform
         checkPlatform();
         //Makes the player fall if not touching a platform. If touching a platform the player will fall if that platform is falling.
@@ -95,6 +93,8 @@ public class Player extends Actor
        if (isTouching(Platform.class) || isTouching(mainPlatform.class))
        {
            touchingPlatform = true;
+           //For updating mainPlatform height
+            checkHeight();
        }
     }
     public void checkGravity()

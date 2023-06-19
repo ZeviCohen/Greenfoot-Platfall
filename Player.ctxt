@@ -1,14 +1,8 @@
 #BlueJ class context
 comment0.target=Player
-<<<<<<< Updated upstream
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Player\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=playerNum
-comment1.target=Player(int)
-=======
-comment0.text=\n\ Write\ a\ description\ of\ class\ Player\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=playerNum\ respawnX
 comment1.target=Player(int,\ int)
->>>>>>> Stashed changes
 comment10.params=
 comment10.target=void\ checkDeath()
 comment11.params=
