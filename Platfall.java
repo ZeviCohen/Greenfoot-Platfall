@@ -31,7 +31,7 @@ public class Platfall extends World
         //Add play button
         addObject(new playButton(), 400, 300);
         //Add about the game button
-        addObject(new infoIcon(), 782, 19);
+        addObject(new infoIcon(), 777, 20);
         //Add keyBind button
         addObject(new keyBindButton(keybinds), 401,405);
         //Add mute button

@@ -21,13 +21,22 @@ public class KeyBinds extends Actor
         img.scale(width, height);
         setImage(img);
         
+        /*
+         * 1 - player1up; 2 - player1left; 3 - player1right
+         * 4 - player2up; 5 - player2left; 3 - player3right
+         */
         this.number = number;
     }
     public void act()
     {
+        String burner = Greenfoot.getKey();
         if (Greenfoot.mouseClicked(this)){
             //setImage(selectedImage);
             ((Platfall)getWorld()).selected = this;
+            if(!Greenfoot.getKey().equals(null)){
+                String textTyped = Greenfoot.getKey();
+                
+            }
         }
         if (((Platfall)getWorld()).keyBindContinue){
             getWorld().removeObject(this);
