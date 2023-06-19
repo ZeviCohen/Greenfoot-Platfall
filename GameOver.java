@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
  * Write a description of class GameOver here.
@@ -14,7 +15,7 @@ public class GameOver extends World
      * Constructor for objects of class GameOver.
      * 
      */
-    public GameOver(int winner)
+    public GameOver(int winner, ArrayList keybinds)
     {    
         // Create a new world
         super(800, 600, 1);
@@ -23,7 +24,7 @@ public class GameOver extends World
         showText("Player " + winner + " wins!!!", 400, 200);
         
         //Restart button
-        addObject(new playAgainButton(), 400, 400);
+        addObject(new playAgainButton(keybinds), 400, 400);
     }
     
     public void act()

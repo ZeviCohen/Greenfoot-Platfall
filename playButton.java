@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
  * Write a description of class playButton here.
@@ -20,6 +21,9 @@ public class playButton extends Actor
     }
     public void act()
     {
-        // Add your action code here.
+        if (Greenfoot.mouseClicked(this)){
+            ArrayList keybinds = ((Platfall)getWorld()).getKeybinds();
+            Greenfoot.setWorld(new Game(keybinds));
+        }
     }
 }

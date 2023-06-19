@@ -12,7 +12,7 @@ public class Player extends Actor
     //Player dependent variables
     private int playerNum;
     private int respawnX;
-    private ArrayList<String> keyBinds;
+    private ArrayList keyBinds;
     //Variables
     private int platformHeight;
     private int speed;
@@ -30,7 +30,7 @@ public class Player extends Actor
     private int jumpCount;
     //Gravity Variables
     private int gravityVar;
-    public Player(int playerNum, int respawnX, ArrayList<String> keyBinds){
+    public Player(int playerNum, int respawnX, ArrayList keyBinds){
         //Player dependent variables
         this.playerNum = playerNum;
         this.respawnX = respawnX;
@@ -121,11 +121,11 @@ public class Player extends Actor
     }
     public void checkKeyPresses()
     {
-        if (Greenfoot.isKeyDown(keyBinds.get(0))){
+        if (Greenfoot.isKeyDown(keyBinds.get(0)+"")){
             setLocation(getX() - speed, getY());
             walkAnimation = true;
         }
-        else if (Greenfoot.isKeyDown(keyBinds.get(1))){
+        else if (Greenfoot.isKeyDown(keyBinds.get(1)+"")){
             setLocation(getX() + speed, getY());
             walkAnimation = true;
         }
@@ -134,7 +134,7 @@ public class Player extends Actor
             setImage(walk1);
         }
         //Jump check
-        if (Greenfoot.isKeyDown(keyBinds.get(2))){
+        if (Greenfoot.isKeyDown(keyBinds.get(2)+"")){
             isJump = true;
         }
     }
@@ -192,7 +192,7 @@ public class Player extends Actor
     }
     public void checkWin(){
         if (isTouching(finishLine.class)){
-            Greenfoot.setWorld(new GameOver(playerNum));
+            Greenfoot.setWorld(new GameOver(playerNum, keyBinds));
         }
     }
     public int getPlayerHeight(){
