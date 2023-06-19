@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
  * Write a description of class Player here.
@@ -11,6 +12,7 @@ public class Player extends Actor
     //Player dependent variables
     private int playerNum;
     private int respawnX;
+    private ArrayList<String> keyBinds;
     //Variables
     private int platformHeight;
     private int speed;
@@ -28,10 +30,11 @@ public class Player extends Actor
     private int jumpCount;
     //Gravity Variables
     private int gravityVar;
-    public Player(int playerNum, int respawnX){
+    public Player(int playerNum, int respawnX, ArrayList<String> keyBinds){
         //Player dependent variables
         this.playerNum = playerNum;
         this.respawnX = respawnX;
+        this.keyBinds = keyBinds;
         //Other variables
         platformHeight = 550;
         speed = 5;
@@ -118,11 +121,11 @@ public class Player extends Actor
     }
     public void checkKeyPresses()
     {
-        if (Greenfoot.isKeyDown("left")){
+        if (Greenfoot.isKeyDown(keyBinds.get(0))){
             setLocation(getX() - speed, getY());
             walkAnimation = true;
         }
-        else if (Greenfoot.isKeyDown("right")){
+        else if (Greenfoot.isKeyDown(keyBinds.get(1))){
             setLocation(getX() + speed, getY());
             walkAnimation = true;
         }
@@ -131,7 +134,7 @@ public class Player extends Actor
             setImage(walk1);
         }
         //Jump check
-        if (Greenfoot.isKeyDown("up")){
+        if (Greenfoot.isKeyDown(keyBinds.get(2))){
             isJump = true;
         }
     }
@@ -183,7 +186,7 @@ public class Player extends Actor
     public void respawn()
     {
         //TODO
-        ((Platfall)getWorld()).mainPlatform1.setPlayerDeathVar(1);
+        ((Game)getWorld()).mainPlatform1.setPlayerDeathVar(1);
         //Respawns to the highest point the player has been (stored in platformHeight)
         setLocation(respawnX, platformHeight);
     }

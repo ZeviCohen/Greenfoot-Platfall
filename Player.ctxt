@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Player
 comment0.text=\n\ Write\ a\ description\ of\ class\ Player\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=playerNum\ respawnX
-comment1.target=Player(int,\ int)
+comment1.params=playerNum\ respawnX\ keyBinds
+comment1.target=Player(int,\ int,\ java.util.ArrayList)
 comment10.params=
 comment10.target=void\ checkDeath()
 comment11.params=

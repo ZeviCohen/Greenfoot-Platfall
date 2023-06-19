@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Write a description of class StartScreen here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -10,39 +10,25 @@ public class Platfall extends World
 {
 
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class StartScreen.
      * 
      */
-    //Initialize the players
-    public Player player1 = new Player(1, 50);
-    public Player player2 = new Player(2, 750);
-    
-    //Initialize the mainPlatforms
-    public mainPlatform mainPlatform1 = new mainPlatform(player1, false);
-    public mainPlatform mainPlatform2 = new mainPlatform(player2, true);
-    
-    //Background gif
-    private GifImage bg = new GifImage("images/Background.gif");
     public Platfall()
     {    
-        // Create a new world
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);
-        setBackground(bg.getCurrentImage());
-        //Creates the players
-        addObject(player1, 50, 500);
-        //addObject(player2, 750, 500);
-        //Creates the mainPlatforms
-        addObject(mainPlatform1,65,565);
-        addObject(mainPlatform2 ,735, 565);
-        //Creates the finish line
-        addObject(new finishLine(), 231,17);
-        addObject(new finishLine(), 585, 17);
+        
+        //Create main part of main menu
+        createMenu();
     }
-    
-    public void act(){
-        if (Greenfoot.getRandomNumber(1000)<5){
-            addObject(new Platform(), Greenfoot.getRandomNumber(542)+129, 40);
-        }
-        setBackground(bg.getCurrentImage());
+    public void createMenu()
+    {
+        //Add play button
+        addObject(new playButton(), 400, 300);
+        //Add about the game button
+        addObject(new infoIcon(), 782, 19);
+        //Add keyBind button
+        addObject(new keyBindButton(), 401,405);
+        //Add mute button
     }
 }
