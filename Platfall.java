@@ -14,6 +14,7 @@ public class Platfall extends World
     public KeyBinds selected;
     private ArrayList<String> textForKeybinds = new ArrayList<>(Arrays.asList("left","right","up","a", "d", "w"));
     public boolean keyBindContinue;
+    public boolean infoBoxExit;
     public Platfall()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -25,6 +26,7 @@ public class Platfall extends World
         keyBindMenu = false;
         selected = null;
         keyBindContinue = false;
+        infoBoxExit = false;
     }
     public void createMenu()
     {

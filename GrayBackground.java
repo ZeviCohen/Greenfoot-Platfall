@@ -27,13 +27,22 @@ public class GrayBackground extends Actor
                 img.mirrorVertically();
             }
         }
+        if (purpose.equals("infoButton")){
+            if (type==1){
+                img.scale(600,600);
+            } 
+            else if (type==2){
+                img.scale(300,300);
+                img.mirrorVertically();
+            }
+        }
         setImage(img);
     }
     public void act()
     {
         // Add your action code here.
         if (purpose.equals("keyBind")){
-            if (((Platfall)getWorld()).keyBindContinue){
+            if (((Platfall)getWorld()).keyBindContinue||((Platfall)getWorld()).infoBoxExit){
                 getWorld().removeObject(this);
             }
         }

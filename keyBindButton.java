@@ -31,7 +31,7 @@ public class keyBindButton extends Actor
             getWorld().addObject(new GrayBackground("keyBind",1), 750, 500);
             getWorld().addObject(new GrayBackground("keyBind",2), 400, 595);
             //Creates the textbox
-            Textbox textbox = new Textbox(600, 600);
+            Textbox textbox = new Textbox(600, 600,0);
             getWorld().addObject(textbox, 401 ,475);
             //Creates the keyBind buttons
             getWorld().addObject(new KeyBinds(60,60, 0),250 ,490);
