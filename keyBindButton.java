@@ -31,8 +31,8 @@ public class keyBindButton extends Actor
             getWorld().addObject(new KeyBinds(60,60, 0),250 ,490);
             getWorld().addObject(new KeyBinds(60,60, 1),300,490);
             getWorld().addObject(new KeyBinds(60,60, 2),275,450);
-            getWorld().addObject(new KeyBinds(60,60, 3),560,490);
-            getWorld().addObject(new KeyBinds(60,60, 4),510,490);
+            getWorld().addObject(new KeyBinds(60,60, 3),510,490);
+            getWorld().addObject(new KeyBinds(60,60, 4),560,490);
             getWorld().addObject(new KeyBinds(60,60, 5),535,450);
             //Creates the continue button
             getWorld().addObject(new okayButton(), 410,550);

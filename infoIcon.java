@@ -14,6 +14,7 @@ public class infoIcon extends Actor
      */
     public infoIcon()
     {
+        
     }
     public void act()
     {
