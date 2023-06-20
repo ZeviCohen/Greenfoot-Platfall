@@ -19,6 +19,9 @@ public class Platfall extends World
     
     //For Background
     private GifImage bg = new GifImage("ForUseImages/StartBackground.gif");
+    
+    //For Music
+    public GreenfootSound song;
     public Platfall()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -31,6 +34,10 @@ public class Platfall extends World
         selected = null;
         keyBindContinue = false;
         infoBoxExit = true;
+        
+        //For Music
+        song = new GreenfootSound("sounds/GreenFootMusic.mp3");
+        song.playLoop();
     }
     public void createMenu()
     {

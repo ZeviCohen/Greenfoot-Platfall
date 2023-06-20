@@ -35,9 +35,11 @@ public class muteButton extends Actor
             if (muteStatus==0){
                 setImage(mute);
                 muteStatus = 1;
+                ((Platfall)getWorld()).song.stop();
             } else {
                 setImage(unmute);
                 muteStatus = 0;
+                ((Platfall)getWorld()).song.playLoop();
             }
             //TODO- Make music play and stop with the mute/unmute
         }

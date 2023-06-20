@@ -51,6 +51,8 @@ public class Game extends World
         addObject(new finishLine(), 358, 15);
         addObject(new finishLine(), 616, 15);
         addObject(new finishLine(), 715, 15);
+        
+        //For music
     }
     
     public void act(){
