@@ -55,6 +55,9 @@ public class Platfall extends World
     {
         bg.getCurrentImage().scale(800,600);
         setBackground(bg.getCurrentImage());
+        if(keyBindContinue){
+            keyBindMenu = false;
+        }
         if (keyBindMenu)
         {
             if (selected != null){
