@@ -32,7 +32,7 @@ public class KeyBinds extends Actor
         if (Greenfoot.mouseClicked(this)){
             ((Platfall)getWorld()).selected = this;
         }
-        if (((Platfall)getWorld()).keyBindContinue){
+        if (((Platfall)getWorld()).keyBindMenu){
             getWorld().removeObject(this);
         }
     }

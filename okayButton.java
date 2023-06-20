@@ -23,7 +23,9 @@ public class okayButton extends Actor
     }
     public void act()
     {
-        ArrayList<String> destroyKeyBinds = keybinds;
+        ArrayList<String> destroyKeyBinds = new ArrayList<String>();
+        destroyKeyBinds.addAll(keybinds);
+        duplicateApproval = true;
         if (Greenfoot.mouseClicked(this)){
             for(int j = 0; j < keybinds.size(); j ++){
                 System.out.println(j);
