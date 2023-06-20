@@ -45,6 +45,7 @@ public class Platfall extends World
         //Add keyBind button
         addObject(new keyBindButton(keybinds), 401,405);
         //Add mute button
+        addObject(new muteButton(), 30, 570);
     }
     public ArrayList getKeybinds(){
         return keybinds;

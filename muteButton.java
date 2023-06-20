@@ -14,16 +14,18 @@ public class muteButton extends Actor
      */
     
     //Image variables
-    private String mute;
-    private String unmute;
+    private GreenfootImage mute;
+    private GreenfootImage unmute;
     
     private int muteStatus;
     
     public muteButton()
     {
-        mute = "ForUseImages/MuteImage.png";
-        unmute = "ForUseImages/UnmuteImage.png";
-        
+        mute = new GreenfootImage("ForUseImages/MuteImage.png");
+        mute.scale(mute.getWidth()/10, mute.getHeight()/10);
+        unmute = new GreenfootImage("ForUseImages/UnmuteImage.png");
+        unmute.scale(unmute.getWidth()/10, unmute.getHeight()/10);
+        setImage(unmute);
         muteStatus = 0;
     }
     public void act()
