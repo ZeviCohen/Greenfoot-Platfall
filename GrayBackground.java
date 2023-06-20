@@ -42,7 +42,12 @@ public class GrayBackground extends Actor
     {
         // Add your action code here.
         if (purpose.equals("keyBind")){
-            if (((Platfall)getWorld()).keyBindContinue||((Platfall)getWorld()).infoBoxExit){
+            if (((Platfall)getWorld()).keyBindContinue){
+                getWorld().removeObject(this);
+            }
+        }
+        if (purpose.equals("infoButton")){
+            if (((Platfall)getWorld()).infoBoxExit){
                 getWorld().removeObject(this);
             }
         }
