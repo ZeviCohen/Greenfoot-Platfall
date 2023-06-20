@@ -197,8 +197,12 @@ public class Player extends Actor
     }
     public void respawn()
     {
-        //TODO
-        ((Game)getWorld()).mainPlatform1.setPlayerDeathVar(1);
+        
+        if (playerNum == 1){
+            ((Game)getWorld()).mainPlatform1.setPlayerDeathVar(1);
+        } else if (playerNum == 2){
+            ((Game)getWorld()).mainPlatform2.setPlayerDeathVar(1);
+        }
         //Respawns to the highest point the player has been (stored in platformHeight)
         setLocation(respawnX, platformHeight);
     }
