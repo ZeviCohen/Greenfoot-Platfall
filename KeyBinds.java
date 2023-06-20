@@ -29,14 +29,8 @@ public class KeyBinds extends Actor
     }
     public void act()
     {
-        String burner = Greenfoot.getKey();
         if (Greenfoot.mouseClicked(this)){
-            //setImage(selectedImage);
             ((Platfall)getWorld()).selected = this;
-            if(!Greenfoot.getKey().equals(null)){
-                String textTyped = Greenfoot.getKey();
-                
-            }
         }
         if (((Platfall)getWorld()).keyBindContinue){
             getWorld().removeObject(this);
