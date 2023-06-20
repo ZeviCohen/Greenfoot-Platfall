@@ -12,18 +12,28 @@ public class Textbox extends Actor
      * Act - do whatever the Textbox wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Textbox(int width, int height, int rotation)
+    private String purpose;
+    public Textbox(int width, int height, int rotation, String purpose)
     {
         GreenfootImage img = getImage();
         img.scale(width, height);
         setImage(img);
         setRotation(rotation);
+        
+        this.purpose = purpose;
     }
     
     public void act()
     {
-        if (((Platfall)getWorld()).keyBindContinue||((Platfall)getWorld()).infoBoxExit){
-            getWorld().removeObject(this);
+        if (purpose.equals("keyBind")){
+            if (((Platfall)getWorld()).keyBindContinue){
+                getWorld().removeObject(this);
+            }
+        }
+        if (purpose.equals("infoButton")){
+            if (((Platfall)getWorld()).infoBoxExit){
+                getWorld().removeObject(this);
+            }
         }
     }
 }

@@ -33,8 +33,7 @@ public class infoIcon extends Actor
                 getWorld().addObject(new GrayBackground("infoButton",1), 268, 301);
                 getWorld().addObject(new GrayBackground("infoButton",2), 718, 561);
                 //Creates the text box
-                getWorld().addObject(new Textbox(600,600,90),682,207);
-                
+                getWorld().addObject(new Textbox(600,600,90, "infoButton"),682,207);
             }
             else{
                 ((Platfall)getWorld()).infoBoxExit = true;
