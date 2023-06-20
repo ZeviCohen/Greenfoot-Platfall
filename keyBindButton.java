@@ -31,19 +31,20 @@ public class keyBindButton extends Actor
                 getWorld().addObject(new GrayBackground("keyBind",1), 750, 500);
                 getWorld().addObject(new GrayBackground("keyBind",2), 400, 595);
                 getWorld().setPaintOrder(okayButton.class, Textbox.class);
+                getWorld().setPaintOrder(okayButton.class, KeyBinds.class, Textbox.class);
                 //Creates the textbox
                 Textbox textbox = new Textbox(600, 600,0,"keyBind");
                 getWorld().addObject(textbox, 401 ,475);
+                //Creates the keyBind buttons
+                getWorld().addObject(new KeyBinds(60,60, 0),250 ,490);
+                getWorld().addObject(new KeyBinds(60,60, 1),300,490);
+                getWorld().addObject(new KeyBinds(60,60, 2),275,450);
+                getWorld().addObject(new KeyBinds(60,60, 3),510,490);
+                getWorld().addObject(new KeyBinds(60,60, 4),560,490);
+                getWorld().addObject(new KeyBinds(60,60, 5),535,450);
                 //Creates the continue button
                 getWorld().addObject(new okayButton(keybinds), 410,550);
             }
-            //Creates the keyBind buttons
-            getWorld().addObject(new KeyBinds(60,60, 0),250 ,490);
-            getWorld().addObject(new KeyBinds(60,60, 1),300,490);
-            getWorld().addObject(new KeyBinds(60,60, 2),275,450);
-            getWorld().addObject(new KeyBinds(60,60, 3),510,490);
-            getWorld().addObject(new KeyBinds(60,60, 4),560,490);
-            getWorld().addObject(new KeyBinds(60,60, 5),535,450);
             //Creates the text
             getWorld().showText("Player 1", 275, 400);
             getWorld().showText("Player 2", 535, 400);
