@@ -16,6 +16,9 @@ public class Platfall extends World
     public boolean keyBindContinue;
     public boolean infoBoxExit;
     private ArrayList<String> forbiddenKeyBindings = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0"));
+    
+    //For Background
+    private GifImage bg = new GifImage("ForUseImages/StartBackground.gif");
     public Platfall()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -31,6 +34,11 @@ public class Platfall extends World
     }
     public void createMenu()
     {
+        //Set Background
+        bg.getCurrentImage().scale(800,600);
+        setBackground(bg.getCurrentImage());
+        //Add Title
+        addObject(new Title(), 410, 60);
         //Add play button
         addObject(new playButton(), 400, 300);
         //Add about the game button
@@ -44,6 +52,8 @@ public class Platfall extends World
     }
     public void act()
     {
+        bg.getCurrentImage().scale(800,600);
+        setBackground(bg.getCurrentImage());
         if (keyBindMenu)
         {
             if (selected != null){
