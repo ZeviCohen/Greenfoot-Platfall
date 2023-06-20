@@ -15,7 +15,6 @@ public class okayButton extends Actor
     private boolean duplicateApproval = true;
     private String currentKey;
     private ArrayList<String> keybinds;
-    private int j;
     public okayButton(ArrayList<String> keybinds){
         GreenfootImage img = getImage();
         img.scale(img.getWidth()/12, img.getHeight()/12);
@@ -24,15 +23,17 @@ public class okayButton extends Actor
     }
     public void act()
     {
+        ArrayList<String> destroyKeyBinds = keybinds;
         if (Greenfoot.mouseClicked(this)){
-            for(j = 0; j < keybinds.size(); j ++);
+            for(int j = 0; j < keybinds.size(); j ++){
                 System.out.println(j);
                 currentKey = keybinds.get(j);
-                keybinds.remove(currentKey);
-                if(keybinds.contains(currentKey)){
+                destroyKeyBinds.remove(currentKey);
+                if(destroyKeyBinds.contains(currentKey)){
                     getWorld().showText("Warning: Duplicate Values Found", 275, 400);
                     duplicateApproval = false;
                 }
+            }
             if(duplicateApproval){
                 ((Platfall)getWorld()).keyBindContinue = true;
                 getWorld().removeObject(this);
