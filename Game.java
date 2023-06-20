@@ -47,8 +47,10 @@ public class Game extends World
         addObject(mainPlatform2 ,735, 565);
         
         //Creates the finish line
-        addObject(new finishLine(), 231,17);
-        addObject(new finishLine(), 585, 17);
+        addObject(new finishLine(), 100,15);
+        addObject(new finishLine(), 358, 15);
+        addObject(new finishLine(), 616, 15);
+        addObject(new finishLine(), 715, 15);
     }
     
     public void act(){
