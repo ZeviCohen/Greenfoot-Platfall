@@ -28,7 +28,6 @@ public class okayButton extends Actor
         duplicateApproval = true;
         if (Greenfoot.mouseClicked(this)){
             for(int j = 0; j < keybinds.size(); j ++){
-                System.out.println(j);
                 currentKey = keybinds.get(j);
                 destroyKeyBinds.remove(currentKey);
                 if(destroyKeyBinds.contains(currentKey)){
