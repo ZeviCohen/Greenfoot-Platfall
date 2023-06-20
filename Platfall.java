@@ -30,6 +30,8 @@ public class Platfall extends World
     }
     public void createMenu()
     {
+        //Add Background
+        addObject(new StartBackground(), 400, 300);
         //Add Title
         addObject(new Title(), 410, 60);
         //Add play button
