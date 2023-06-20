@@ -121,20 +121,32 @@ public class Player extends Actor
     }
     public void checkKeyPresses()
     {
-        if (Greenfoot.isKeyDown(keyBinds.get(0)+"")){
-            setLocation(getX() - speed, getY());
-            walkAnimation = true;
+        String left = "";
+        String right = "";
+        String up = "";
+        if (playerNum==1){
+            left = keyBinds.get(0)+"";
+            right = keyBinds.get(1)+"";
+            up = keyBinds.get(2)+"";
+        } else if (playerNum==2){
+            left = keyBinds.get(3)+"";
+            right = keyBinds.get(4)+"";
+            up = keyBinds.get(5)+"";
         }
-        else if (Greenfoot.isKeyDown(keyBinds.get(1)+"")){
-            setLocation(getX() + speed, getY());
-            walkAnimation = true;
-        }
-        else{
-            walkAnimation = false;
-            setImage(walk1);
-        }
+        if (Greenfoot.isKeyDown(left)){
+                setLocation(getX() - speed, getY());
+                walkAnimation = true;
+            }
+            else if (Greenfoot.isKeyDown(right)){
+                setLocation(getX() + speed, getY());
+                walkAnimation = true;
+            }
+            else{
+                walkAnimation = false;
+                setImage(walk1);
+            }
         //Jump check
-        if (Greenfoot.isKeyDown(keyBinds.get(2)+"")){
+        if (Greenfoot.isKeyDown(up)){
             isJump = true;
         }
     }

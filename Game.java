@@ -27,8 +27,8 @@ public class Game extends World
         setBackground(bg.getCurrentImage());
         
         //Keybinds
-        ArrayList<String> player1Keybinds = new ArrayList(Arrays.asList(keybinds.get(0), keybinds.get(1), keybinds.get(2)));
-        ArrayList<String> player2Keybinds = new ArrayList(Arrays.asList(keybinds.get(3),keybinds.get(4),keybinds.get(5)));
+        ArrayList<String> player1Keybinds = new ArrayList(Arrays.asList(keybinds.get(0), keybinds.get(1), keybinds.get(2),keybinds.get(3),keybinds.get(4),keybinds.get(5)));
+        ArrayList<String> player2Keybinds = new ArrayList(Arrays.asList(keybinds.get(0), keybinds.get(1), keybinds.get(2),keybinds.get(3),keybinds.get(4),keybinds.get(5)));
     
         //Initialize the players
         Player player1 = new Player(1, 50, player1Keybinds);
