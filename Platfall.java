@@ -30,7 +30,7 @@ public class Platfall extends World
         keyBindMenu = false;
         selected = null;
         keyBindContinue = false;
-        infoBoxExit = false;
+        infoBoxExit = true;
     }
     public void createMenu()
     {
@@ -73,7 +73,17 @@ public class Platfall extends World
             showText(textForKeybinds.get(3),510,490);
             showText(textForKeybinds.get(4),560,490);
             showText(textForKeybinds.get(5),535,450);
-        } else{
+        }
+        else if(!infoBoxExit){
+            //Creates the text for the info icon
+            showText("Platfall is a 2D two-", 680, 150);
+            showText("player game created", 680, 175);
+            showText("using Greenfoot.", 680, 200);
+            showText("Check out the github", 680, 275);
+            showText("readme.md for more", 680, 300);
+            showText("information.", 680, 325);
+        }
+         else{
             //Hides the text
             showText("",250 ,490);
             showText("",300,490);
@@ -84,6 +94,12 @@ public class Platfall extends World
             showText("",275,400);
             showText("",535,400);
             showText("",405,490);
+            showText("", 680, 150);
+            showText("", 680, 175);
+            showText("", 680, 200);
+            showText("", 680, 275);
+            showText("", 680, 300);
+            showText("", 680, 325);
         }
     }
 }
