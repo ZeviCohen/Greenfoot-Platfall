@@ -63,6 +63,7 @@ public class Player extends Actor
         updateCooldown();
         //Check if player is touching a platform
         checkPlatform();
+        checkHeight();
         //Makes the player fall if not touching a platform. If touching a platform the player will fall if that platform is falling.
         checkGravity();
         //To move the player
@@ -87,7 +88,7 @@ public class Player extends Actor
     }
     public void checkHeight()
     {
-        if (getY()<platformHeight){
+        if (getY()<platformHeight && touchingPlatform){
             platformHeight = getY();
         }
     }
@@ -202,7 +203,6 @@ public class Player extends Actor
     }
     public void respawn()
     {
-        
         if (playerNum == 1){
             ((Game)getWorld()).mainPlatform1.setPlayerDeathVar(1);
         } else if (playerNum == 2){
