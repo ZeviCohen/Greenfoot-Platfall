@@ -24,7 +24,7 @@ public class Platform extends Actor
     private int[] currentLocation = new int[2];
     
     //Frozen or not
-    private boolean frozen;
+    public boolean frozen;
     
     //For cooldown on freezing
     private int cooldownVar;

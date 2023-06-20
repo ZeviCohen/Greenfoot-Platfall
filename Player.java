@@ -36,7 +36,7 @@ public class Player extends Actor
         this.respawnX = respawnX;
         this.keyBinds = keyBinds;
         //Other variables
-        platformHeight = 550;
+        platformHeight = 500;
         speed = 5;
         //Animation variables
         walk1 = new GreenfootImage("ForUseImages/playerGrey_walk1.png");
@@ -93,12 +93,20 @@ public class Player extends Actor
     }
     public void checkPlatform()
     {
-       if (isTouching(Platform.class) || isTouching(mainPlatform.class))
-       {
-           touchingPlatform = true;
-           //For updating mainPlatform height
-           checkHeight();
+       Platform detected1 = (Platform) getOneObjectAtOffset(0,-getImage().getHeight()/2,Platform.class);
+       Platform detected2 = (Platform) getOneObjectAtOffset(0,getImage().getHeight()/2+8,Platform.class);
+       mainPlatform detectedMainPlatform = (mainPlatform) getOneObjectAtOffset(0,getImage().getHeight()/2 + 8,mainPlatform.class);
+       if (detected1 != null && detected1.frozen != true ) {
+           respawn();
        }
+       else if (detected2 != null) {
+           touchingPlatform = true;
+           setLocation(getX(),detected2.getY() - detected2.getImage().getHeight());
+           gravityVar = detected2.getGravity();
+       }
+       if (detectedMainPlatform != null) {
+           touchingPlatform = true;
+       } 
     }
     public void checkGravity()
     {
@@ -109,10 +117,7 @@ public class Player extends Actor
             touchingPlatform = false;
         }
         else if(!isJump && isTouching(Platform.class)){
-            Platform platform = (Platform)getOneObjectAtOffset(0, 10, Platform.class);
-            if (platform!=null){
-                gravityVar = platform.getGravity();
-            }
+            ;
         }
         else{
             gravityVar = 0;
