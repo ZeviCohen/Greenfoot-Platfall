@@ -21,6 +21,7 @@ public class okayButton extends Actor
     {
         if (Greenfoot.mouseClicked(this)){
              ((Platfall)getWorld()).keyBindContinue = true;
+             ((Platfall)getWorld()).keyBindMenu = false; 
              getWorld().removeObject(this);
         }
     }
