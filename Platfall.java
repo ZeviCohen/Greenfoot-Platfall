@@ -83,6 +83,7 @@ public class Platfall extends World
             showText("",535,450);
             showText("",275,400);
             showText("",535,400);
+            showText("",405,490);
         }
     }
 }

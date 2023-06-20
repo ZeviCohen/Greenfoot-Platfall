@@ -31,7 +31,7 @@ public class okayButton extends Actor
                 currentKey = keybinds.get(j);
                 destroyKeyBinds.remove(currentKey);
                 if(destroyKeyBinds.contains(currentKey)){
-                    getWorld().showText("Warning: Duplicate Values Found", 275, 400);
+                    getWorld().showText("Duplicate Values", 405, 490);
                     duplicateApproval = false;
                 }
             }
