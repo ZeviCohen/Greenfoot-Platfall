@@ -1,4 +1,4 @@
-What is this game? Platfall is a 2D two-player game created using Godot 4.
+What is this game? Platfall is a 2D two-player game created using Greenfoot.
 
 Brief Summary: The goal of a player is to compete against their opponent and reach the top of the screen before their opponent does. Helping them reach the top are some falling platforms(hence the name platfall) that can be controlled by the player's number keys.
 
