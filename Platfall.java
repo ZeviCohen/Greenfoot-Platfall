@@ -15,6 +15,9 @@ public class Platfall extends World
     private ArrayList<String> textForKeybinds = new ArrayList<>(Arrays.asList("left","right","up","a", "d", "w"));
     public boolean keyBindContinue;
     public boolean infoBoxExit;
+    
+    //For Background
+    private GifImage bg = new GifImage("ForUseImages/StartBackground.gif");
     public Platfall()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -30,8 +33,9 @@ public class Platfall extends World
     }
     public void createMenu()
     {
-        //Add Background
-        addObject(new StartBackground(), 400, 300);
+        //Set Background
+        bg.getCurrentImage().scale(800,600);
+        setBackground(bg.getCurrentImage());
         //Add Title
         addObject(new Title(), 410, 60);
         //Add play button
@@ -47,6 +51,8 @@ public class Platfall extends World
     }
     public void act()
     {
+        bg.getCurrentImage().scale(800,600);
+        setBackground(bg.getCurrentImage());
         if (keyBindMenu)
         {
             if (selected != null){
