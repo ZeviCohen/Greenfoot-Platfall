@@ -37,6 +37,7 @@ public class okayButton extends Actor
             }
             if(duplicateApproval){
                 ((Platfall)getWorld()).keyBindContinue = true;
+                ((Platfall)getWorld()).keyBindMenu = false;
                 getWorld().removeObject(this);
             }
         }
