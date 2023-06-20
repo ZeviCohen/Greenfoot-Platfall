@@ -97,7 +97,7 @@ public class Player extends Actor
        {
            touchingPlatform = true;
            //For updating mainPlatform height
-            checkHeight();
+           checkHeight();
        }
     }
     public void checkGravity()
