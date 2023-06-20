@@ -11,6 +11,8 @@ public class GameOver extends World
 {
     //Background gif
     private GifImage bg = new GifImage("ForUseImages/endScreenGif.gif");
+    //For music
+    public GreenfootSound song;
     /**
      * Constructor for objects of class GameOver.
      * 
