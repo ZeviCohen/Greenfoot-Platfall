@@ -15,6 +15,7 @@ public class Platfall extends World
     private ArrayList<String> textForKeybinds = new ArrayList<>(Arrays.asList("left","right","up","a", "d", "w"));
     public boolean keyBindContinue;
     public boolean infoBoxExit;
+    private ArrayList<String> forbiddenKeyBindings = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0"));
     public Platfall()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -48,7 +49,7 @@ public class Platfall extends World
             if (selected != null){
                 int num = selected.number;
                 String key = Greenfoot.getKey();
-                if (key != null){
+                if (key != null && !forbiddenKeyBindings.contains(key)){
                     keybinds.set(num, key);
                     textForKeybinds.set(num, key);
                     selected = null;

@@ -41,7 +41,7 @@ public class keyBindButton extends Actor
             getWorld().addObject(new KeyBinds(60,60, 4),560,490);
             getWorld().addObject(new KeyBinds(60,60, 5),535,450);
             //Creates the continue button
-            getWorld().addObject(new okayButton(), 410,550);
+            getWorld().addObject(new okayButton(keybinds), 410,550);
             //Creates the text
             getWorld().showText("Player 1", 275, 400);
             getWorld().showText("Player 2", 535, 400);
